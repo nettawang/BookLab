@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,6 +30,7 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
+
 
 
 public class BookListActivity extends AppCompatActivity {
@@ -65,6 +67,8 @@ public class BookListActivity extends AppCompatActivity {
                     }
                 }
         );
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     // Executes an API call to the OpenLibrary search endpoint, parses the results
@@ -117,8 +121,8 @@ public class BookListActivity extends AppCompatActivity {
         // Customize searchview text and hint colors
         int searchEditId = android.support.v7.appcompat.R.id.search_src_text;
         EditText et = (EditText) searchView.findViewById(searchEditId);
-        et.setTextColor(Color.YELLOW);
-        et.setHintTextColor(Color.YELLOW);
+        et.setTextColor(Color.BLUE);
+        et.setHintTextColor(Color.BLUE);
 
         // Expand the search view and request focus
         searchItem.expandActionView();

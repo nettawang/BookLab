@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -32,7 +33,8 @@ public class BookDetailActivity extends AppCompatActivity {
         Book book = Parcels.unwrap(intent.getParcelableExtra("book"));
         String title = book.getTitle();
         String author = book.getAuthor();
-        getSupportActionBar().setTitle(title); // set the top title
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(title); // set the top title
 
         // Extract book object from intent extras
 
