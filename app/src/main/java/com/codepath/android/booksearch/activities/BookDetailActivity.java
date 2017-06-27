@@ -1,6 +1,7 @@
 package com.codepath.android.booksearch.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.codepath.android.booksearch.R;
 import com.codepath.android.booksearch.models.Book;
 
@@ -35,6 +37,13 @@ public class BookDetailActivity extends AppCompatActivity {
         // Extract book object from intent extras
 
         // Use book object to populate data into views
+        tvTitle.setText(title);
+        tvAuthor.setText(author);
+        Glide.with(this)
+                .load(Uri.parse(book.getCoverUrl()))
+                .placeholder(R.drawable.ic_nocover)
+                .into(ivBookCover);
+
     }
 
 
